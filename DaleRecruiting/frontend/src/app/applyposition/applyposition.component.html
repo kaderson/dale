@@ -1,9 +1,11 @@
 <div class="col-sm-9">
   <div>
-      <b>descrizione posizione: {{posizione_descrizione.descrizione_posizione}}</b><br/><br/>
+    <h1><b>{{posizione_descrizione.titolo}}</b></h1><br /><br />
   </div>
-
- <form [formGroup]="userForm" (ngSubmit)="submit()">
+  <div>
+    <b>{{posizione_descrizione.descrizione_posizione}}</b><br /><br />
+  </div>
+  <form [formGroup]="userForm" (ngSubmit)="submit()">
     <div class="form-group">
       <label>Nome</label>
       <input type="text" formControlName="nome" class="form-control"
