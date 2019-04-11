@@ -1,0 +1,77 @@
+<div class="col-sm-9">
+  <form [formGroup]="searchForm" (submit)="submit()">
+    <div class="form-group">
+      <label>Data Ricerca:</label>
+      <input type="date" class="form-control" formControlName="data_ricerca"
+        [ngClass]="{ 'is-invalid': submitted && s.data_ricerca.errors }" [(ngModel)]="ricerca.data_ricerca" />
+      <div *ngIf="submitted && s.data_ricerca.errors" class="invalid-feedback">
+        <div *ngIf="s.data_ricerca.errors.required">Campo obbligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Titolo:</label>
+      <input type="text" class="form-control" formControlName="titolo"
+        [ngClass]="{ 'is-invalid': submitted && s.titolo.errors }" [(ngModel)]="ricerca.titolo" />
+      <div *ngIf="submitted && s.titolo.errors" class="invalid-feedback">
+        <div *ngIf="s.titolo.errors.required">Campo obbligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Breve descrizione:</label>
+      <textarea class="form-control" formControlName="descrizione" rows="2"
+        [ngClass]="{ 'is-invalid': submitted && s.descrizione.errors }" [(ngModel)]="ricerca.descrizione"></textarea>
+      <div *ngIf="submitted && s.descrizione.errors" class="invalid-feedback">
+        <div *ngIf="s.descrizione.errors.required">Campo obbligatorio</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+        <label>Descrizione posizione (questo testo verrà visualizzato dai candidati):</label>
+        <textarea class="form-control" formControlName="descrizione_posizione" rows="2"
+          [ngClass]="{ 'is-invalid': submitted && s.descrizione_posizione.errors }" [(ngModel)]="ricerca.descrizione_posizione"></textarea>
+        <div *ngIf="submitted && s.descrizione_posizione.errors" class="invalid-feedback">
+          <div *ngIf="s.descrizione_posizione.errors.required">Campo obbligatorio</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label>Ricerca eseguita da:</label>
+      <input type="text" class="form-control" formControlName="recruiter"
+        [ngClass]="{ 'is-invalid': submitted && s.recruiter.errors }" [(ngModel)]="ricerca.recruiter" />
+      <div *ngIf="submitted && s.recruiter.errors" class="invalid-feedback">
+        <div *ngIf="s.recruiter.errors.required">Campo obbligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Azienda cliente:</label>
+      <input type="text" class="form-control" formControlName="azienda_cliente"
+        [ngClass]="{ 'is-invalid': submitted && s.azienda_cliente.errors }" [(ngModel)]="ricerca.azienda_cliente" />
+      <div *ngIf="submitted && s.azienda_cliente.errors" class="invalid-feedback">
+        <div *ngIf="s.azienda_cliente.errors.required">Campo obbligatorio</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Scadenza ricerca:</label>
+      <input type="date" class="form-control" formControlName="scadenza_ricerca"
+        [ngClass]="{ 'is-invalid': submitted && s.scadenza_ricerca.errors }" [(ngModel)]="ricerca.scadenza_ricerca" />
+      <div *ngIf="submitted && s.scadenza_ricerca.errors" class="invalid-feedback">
+        <div *ngIf="s.scadenza_ricerca.errors.required">Campo obbligatorio</div>
+      </div>
+    </div>
+
+    <div class="custom-control custom-switch">
+      <input type="checkbox" formControlName="posizione_aperta" class="custom-control-input" id="switch1"
+        [(ngModel)]="ricerca.posizione_aperta" />
+      <label class="custom-control-label" for="switch1">Posizione aperta</label>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-9">
+        <button id="button" class="btn btn-success" type="submit">Salva ricerca</button>
+      </div>
+      <div class="form-group col-sm-3">
+        <button id="button" class="btn btn-primary" routerLink="/ricerche/cand/{{ricerca.id_ricerca}}">Cerca
+          candidati</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+.col-sm-9 {
+    margin-top: 80px;
+}
+
+.align-center {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.error {
+    font-size: 80%;
+    color: #dc3545;
+    margin-top: 24px;
+}

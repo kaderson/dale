@@ -1,0 +1,26 @@
+<div>
+  <li id="cursor" class="list-group-item text-center list-group-item-action" routerLink="/addRicerca"><b>Aggiungi
+      ricerca</b></li>
+  <div>
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder="Filtra ricerche..." />
+  </div>
+  <ul class="list-group">
+    <li *ngFor="let ricerca of ricercas | filter: searchText" class="list-group-item">
+      <div class="row">
+        <div class="col-sm-9" routerLink="/ricerche/{{ricerca.id_ricerca}}">
+          <span>Data: {{ ricerca.data_ricerca }} | Titolo: {{ ricerca.titolo }} | Posizione:
+            <b>{{ ricerca.tipo_posizione }}</b></span><br>
+          <span>Azienda: <b>{{ ricerca.azienda_cliente }}</b> | Eseguita da: {{ ricerca.recruiter }} | Scadenza:
+            {{ ricerca.scadenza_ricerca }}</span><br>
+          <span>Descrizione: {{ ricerca.descrizione }}</span>
+        </div>
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-1">
+          <img src="assets/round-delete-24px.svg" alt="×" (click)="deleteRicerca(ricerca.id_ricerca)">
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

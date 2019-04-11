@@ -1,0 +1,32 @@
+.col-sm-9 {
+    cursor: pointer;
+}
+
+.col-sm-2 {
+    text-align: center;
+}
+
+.form-check-input {
+    margin-left: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+img {
+    cursor: pointer;
+}
+
+.list-group {
+    margin-top: 10px;
+}
+
+#cursor {
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: rgb(240, 240, 240);
+    font-size: 20px;
+}
+
+#cursor:hover {
+    background-color: rgb(248, 249, 250)
+}

@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-custom">
+    <span id="default" class="navbar-brand text-light" *ngIf="!auth.isLoggedIn()">
+        <img src="assets/dale-consulting-logo.png" alt="DALE" routerLink="/home">
+        Recruiting</span>
+    <span id="default" class="navbar-brand text-light" *ngIf="auth.isLoggedIn()">
+        <img src="assets/dale-consulting-logo.png" alt="DALE" routerLink="/candidati">
+        Recruiting</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li id="pointer" class="nav-item" *ngIf="!auth.isLoggedIn()">
+                <a class="nav-link text-light" routerLink="/login">Login</a>
+            </li>
+
+            <li class="nav-item" *ngIf="auth.isLoggedIn()">
+                <span class="nav-link text-light"><u>Benvenuto {{ auth.getUserDetails().nome }}</u></span>
+            </li>
+
+            <li id="pointer" class="nav-item" *ngIf="auth.isLoggedIn()">
+                <a class="nav-link text-light" (click)="auth.logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-sm-3">
+        <app-sidebar *ngIf="auth.isLoggedIn()"></app-sidebar>
+    </div>
+    <div class="col-sm-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>

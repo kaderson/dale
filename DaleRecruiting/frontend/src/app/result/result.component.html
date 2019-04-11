@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder="Filtra candidati..." />
+  </div>
+  <ul class="list-group">
+    <li *ngFor="let anagrafica of anagraficas | filter: searchText" class="list-group-item">
+      <div class="row">
+        <div class="col-sm-9" routerLink="/anagrafica/{{anagrafica.id_anagrafica}}">
+          <span><b>{{ anagrafica.nome }} {{ anagrafica.cognome }} - {{ anagrafica.tipo_posizione }}</b></span><br>
+          <span><i>email:</i> {{ anagrafica.email }} - <i>cellulare:</i> {{ anagrafica.cell }}</span>
+        </div>
+        <div class="col-sm-2">
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" id="switch1" [(ngModel)]="anagrafica.contattato"
+              disabled />
+            <label class="custom-control-label" for="switch1">Contattato</label>
+          </div>
+        </div>
+        <div class="col-sm-1">
+          <img src="assets/round-delete-24px.svg" alt="×" (click)="deleteAnagr(anagrafica.id_anagrafica)">
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

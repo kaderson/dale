@@ -1,0 +1,23 @@
+<div>
+  <li id="cursor" class="list-group-item text-center list-group-item-action" routerLink="/addSkill"><b>Aggiungi
+      skill</b>
+  </li>
+  <div>
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder="Filtra skills..." />
+  </div>
+    <ul class="list-group">
+      <li *ngFor="let skill of skills | filter: searchText"  class="list-group-item">
+      <div class="row">
+        <div class="col-sm-9 text-center" routerLink="/skills/{{skill.id_skill}}">
+          <span><b>{{skill.skill}}</b></span>
+        </div>
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2 text-center">
+          <img src="assets/round-delete-24px.svg" alt="×" (click)="deleteSkills(skills.id_skill)">
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

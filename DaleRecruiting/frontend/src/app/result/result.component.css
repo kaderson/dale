@@ -1,0 +1,15 @@
+li {
+    background-color: aliceblue;
+}
+
+.col-sm-9 {
+    cursor: pointer;
+}
+
+img {
+    cursor: pointer;
+}
+
+.list-group {
+    margin-top: 10px;
+}

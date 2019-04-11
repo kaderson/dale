@@ -1,0 +1,15 @@
+a:hover {
+    cursor: pointer;
+}
+
+.col-sm-9 {
+    margin-top: 20px;
+}
+
+img {
+    cursor: pointer;
+}
+
+.navbar-dark {
+    background-color: #006064;
+}

@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "http://uatservices.daleconsulting.it:3000",
+        "secure": false
+    }
+}

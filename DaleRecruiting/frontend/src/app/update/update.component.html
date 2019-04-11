@@ -1,0 +1,37 @@
+<div class="col-sm-9">
+  <form [formGroup]="userForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" formControlName="nome" class="form-control" [(ngModel)]="anagr.nome" />
+    </div>
+    <div class="form-group">
+      <label>Cognome</label>
+      <input type="text" formControlName="cognome" class="form-control" [(ngModel)]="anagr.cognome" />
+    </div>
+    <div class="form-group">
+      <label>E-mail</label>
+      <input type="email" formControlName="email" class="form-control" [(ngModel)]="anagr.email" />
+    </div>
+    <div class="form-group">
+      <label>Numero di cellulare</label>
+      <input type="text" formControlName="cell" class="form-control" [(ngModel)]="anagr.cell" />
+    </div>
+    <div class="form-group">
+      <label>Età</label>
+      <input type="number" formControlName="age" class="form-control" [(ngModel)]="anagr.age" />
+    </div>
+    <div class="custom-control custom-switch">
+      <input type="checkbox" formControlName="contattato" class="custom-control-input" id="switch1"
+        [(ngModel)]="anagr.contattato" />
+      <label class="custom-control-label" for="switch1">Contattato</label>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-9">
+        <button id="button" class="btn btn-success" type="submit">Salva candidato</button>
+      </div>
+      <div class="form-group col-sm-3">
+          <button id="button" class="btn btn-primary" routerLink="/candidati">Indietro</button>
+        </div>
+    </div>
+  </form>
+</div>
